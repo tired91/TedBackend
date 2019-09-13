@@ -45,5 +45,22 @@ function getFormType(doc) {
   return formTypeValue;
 }
 
+//get Languages
+function getLanguages(doc) {
+
+  try {
+    var avalibleLanguages = xpath.select(
+      '/TED_EXPORT/TECHNICAL_SECTION/FORM_LG_LIST',
+      doc
+    );
+    var avalibleLanguagesValue = avalibleLanguages[0].firstChild.data;
+    
+  } catch (err) {
+    console.log('could find avalible languages with that xpath');
+  }
+  return avalibleLanguagesValue;
+}
+
 console.log(getPublicationDate(doc));
 console.log(getFormType(doc));
+console.log(getLanguages(doc))
