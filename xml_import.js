@@ -10,10 +10,9 @@ let xml2 = xml.replace(
 
 var xpath = require('xpath'),
   dom = require('xmldom').DOMParser;
-
-//var xml = '<book><title>Harry Potter</title></book>';
 var doc = new dom().parseFromString(xml2);
 
+//GET PUBLICATION DATE
 var pubdate = xpath.select(
   '/TED_EXPORT/CODED_DATA_SECTION/REF_OJS/DATE_PUB',
   doc
@@ -21,6 +20,7 @@ var pubdate = xpath.select(
 
 console.log(pubdate[0].firstChild.data);
 
+//get the mainCPVCODE
 try {
   var cpvcode = xpath.select1(
     '/TED_EXPORT/CODED_DATA_SECTION/NOTICE_DATA/ORIGINAL_CPV/@CODE',
@@ -30,3 +30,5 @@ try {
 } catch (err) {
   console.log('finns ej med');
 }
+
+///changed made
