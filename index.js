@@ -56,7 +56,7 @@ async function downloadYesterdaysTar(hh, mm) {
   });
 }
 
-downloadYesterdaysTar(08, 07);
+downloadYesterdaysTar(22, 22);
 
 /**
  * Get all the filenames from a specific directory
